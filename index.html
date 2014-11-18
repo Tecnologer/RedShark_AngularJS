@@ -54,9 +54,14 @@
 		</table>
 	</div>
 	<div class="fileLoader">
-		<input type="file" nv-file-select="" uploader="uploader" multiple  accept=".mp3"/>
-		<div class="well my-drop-zone" nv-file-over="" uploader="uploader">
-            
+		<div ng-show="uploader.isHTML5">
+            <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+            <div nv-file-drop="" uploader="uploader">
+                <div nv-file-over="" uploader="uploader" over-class="another-file-over-class" class="well my-drop-zone">
+					<input type="file" nv-file-select="" uploader="uploader" multiple  accept=".mp3" />
+                    <!-- Coloca las canciones aqui... -->
+                </div>
+            </div>
         </div>
 
         <table class="table"><!--  ng-show="uploader.queue.length>0" -->

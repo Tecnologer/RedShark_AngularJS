@@ -123,7 +123,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2969,
+				"buffer_size": 3304,
 				"line_ending": "Windows"
 			}
 		},
@@ -147,7 +147,7 @@
 			"file": "js/controllers/redshark.js",
 			"settings":
 			{
-				"buffer_size": 3471,
+				"buffer_size": 3437,
 				"line_ending": "Windows"
 			}
 		},
@@ -172,15 +172,7 @@
 			"file": "css/style.css",
 			"settings":
 			{
-				"buffer_size": 662,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 535,
+				"buffer_size": 695,
 				"line_ending": "Windows"
 			}
 		}
@@ -233,6 +225,7 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/RedShark_AngularJS/README.md",
 		"/C/xampp/htdocs/RedShark_AngularJS/componentes/funciones/doajaxfileupload.php",
 		"/C/xampp/htdocs/RedShark_AngularJS/js/directives/directives.js",
 		"/C/xampp/htdocs/RedShark_AngularJS/index.php",
@@ -318,7 +311,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -326,15 +319,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 2969,
+						"buffer_size": 3304,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2211,
-								2211
+								2533,
+								2533
 							]
 						],
 						"settings":
@@ -343,7 +336,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 858.0,
+						"translation.y": 944.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -360,8 +353,8 @@
 						"selection":
 						[
 							[
-								409,
-								409
+								386,
+								386
 							]
 						],
 						"settings":
@@ -407,15 +400,15 @@
 					"file": "js/controllers/redshark.js",
 					"settings":
 					{
-						"buffer_size": 3471,
+						"buffer_size": 3437,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								471,
-								471
+								507,
+								507
 							]
 						],
 						"settings":
@@ -451,7 +444,7 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 65.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -488,15 +481,15 @@
 					"file": "css/style.css",
 					"settings":
 					{
-						"buffer_size": 662,
+						"buffer_size": 695,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								660,
-								660
+								633,
+								633
 							]
 						],
 						"settings":
@@ -505,32 +498,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 475.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "README.md",
-					"settings":
-					{
-						"buffer_size": 535,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								18,
-								18
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -593,7 +560,7 @@
 		[
 			[
 				"",
-				"/C/xampp/htdocs/fileUpload/fileUpload.sublime-project"
+				"/C/xampp/htdocs/gva/gva.sublime-project"
 			]
 		],
 		"width": 380.0

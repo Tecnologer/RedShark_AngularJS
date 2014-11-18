@@ -8,8 +8,7 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 	uploader.filters.push({
             name: 'customFilter',
             fn: function(audio /*{File|FileLikeObject}*/, options) {
-            	console.log(options);
-                return this.queue.length < 10;
+                return this.queue.length < 100;
             }
     });
 
