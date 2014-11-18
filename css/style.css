@@ -1,0 +1,25 @@
+.listado{
+	width: 50%;
+	float: left;
+}
+
+.fileLoader{
+	width: 50%;
+	float: right;
+}
+
+.rowSongAlt{
+	background-color: #E0E0EF
+}
+
+.rowSong,.rowSongAlt{
+	cursor: default;
+}
+
+.rowSong:hover,.rowSongAlt:hover{
+	background-color: #F5F5F5
+}
+
+.playing{
+	color: #FF0000
+}

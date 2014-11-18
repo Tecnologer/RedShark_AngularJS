@@ -1,0 +1,569 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"$inter",
+				"$interval	AngularJS"
+			],
+			[
+				"row",
+				"rowSongAlt"
+			],
+			[
+				"ng",
+				"ng-app	AngularJS"
+			],
+			[
+				"NB_",
+				"NB_ESTADO"
+			],
+			[
+				"red",
+				"redServices"
+			],
+			[
+				"servi",
+				"servicio"
+			],
+			[
+				"serv",
+				"servicio"
+			],
+			[
+				"nb",
+				"nb_ciudad"
+			],
+			[
+				"ser",
+				"servicio"
+			],
+			[
+				"acc",
+				"access=\"remote\"	access"
+			],
+			[
+				"na",
+				"name	@name"
+			],
+			[
+				"nb_",
+				"nb_ciudad"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"ng-c",
+				"ng-click	AngularJS"
+			],
+			[
+				"err",
+				"errorEdo"
+			],
+			[
+				"$int",
+				"$interval	AngularJS"
+			],
+			[
+				"$in",
+				"$interval	AngularJS"
+			],
+			[
+				"control",
+				"control2"
+			],
+			[
+				"$s",
+				"$scope	AngularJS"
+			],
+			[
+				"listar",
+				"listarDB"
+			],
+			[
+				"ciu",
+				"ciudades"
+			],
+			[
+				"cftra",
+				"cftransaction	Tag (cmfl)"
+			],
+			[
+				"re",
+				"required=\"true\"	required"
+			],
+			[
+				"ty",
+				"type=\"string\"	type"
+			],
+			[
+				"fn",
+				"function"
+			],
+			[
+				"id",
+				"id_ciudad"
+			],
+			[
+				"ciud",
+				"ciudades"
+			],
+			[
+				"ng-re",
+				"ng-repeat	AngularJS"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 2028,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/buttons.css",
+			"settings":
+			{
+				"buffer_size": 444,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/controllers/redshark.js",
+			"settings":
+			{
+				"buffer_size": 2745,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/services/servicios.js",
+			"settings":
+			{
+				"buffer_size": 1445,
+				"line_ending": "Windows",
+				"name": "var _services=angular.module('redFactorys',['servi"
+			}
+		},
+		{
+			"file": "js/directives/directivas.js",
+			"settings":
+			{
+				"buffer_size": 8361,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/style.css",
+			"settings":
+			{
+				"buffer_size": 261,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 530,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"git: ",
+				"Git: Fetch"
+			],
+			[
+				"git",
+				"Git: Pull"
+			],
+			[
+				"comi",
+				"Git: Commit"
+			],
+			[
+				"git:",
+				"Git: Fetch"
+			],
+			[
+				"git: op",
+				"Git: Open Config File"
+			]
+		],
+		"width": 472.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/RedShark_AngularJS/componentes/funciones/doajaxfileupload.php",
+		"/C/xampp/htdocs/RedShark_AngularJS/js/directives/directives.js",
+		"/C/xampp/htdocs/RedShark_AngularJS/index.php",
+		"/C/Zodo/.git/config",
+		"/C/Users/Tecnologer/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Tecnologer/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/xampp/htdocs/CursosAgular_RR2/js/directivas.js",
+		"/C/xampp/htdocs/CursosAgular_RR2/componentes/ciudades.cfc",
+		"/C/xampp/htdocs/CursosAgular_RR2/js/jquery-1.11.1.min.js",
+		"/C/xampp/htdocs/CursosAgular_RR2/index.html",
+		"/C/xampp/htdocs/CursosAgular_RR2/js/funciones.js",
+		"/C/xampp/htdocs/CursosAgular_RR2/componentes/cfproxy.cfc",
+		"/C/xampp/htdocs/CursosAgular_RR2/js/ui-bootstrap-tpls-0.11.0.min.js",
+		"/C/xampp/htdocs/CursoAngular_RR/js/funciones.js",
+		"/C/xampp/htdocs/CursoAngular_RR/index.html",
+		"/C/xampp/htdocs/CursoAngular_RR/ciudades.cfc",
+		"/C/xampp/htdocs/CursoAngular_RR/js/ui-bootstrap-tpls-0.11.0.min.js"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"next",
+			"Du Hast",
+			"D",
+			"E",
+			"D",
+			"[0]",
+			"0",
+			"tag_audio",
+			"/",
+			"\\\\",
+			"git",
+			"ngGrid",
+			"agregar",
+			"cd.",
+			".cd",
+			"errorEdo",
+			"$scope",
+			"$interval",
+			"listarDB",
+			"eliminarDB",
+			"\n	",
+			"agregarDB",
+			"nb_estado",
+			"$scope.",
+			"a",
+			"$scope.",
+			"modal",
+			"nb_estado",
+			"cd",
+			"ciudad.",
+			"$scope",
+			"ciudad",
+			"nb_estado",
+			"ctrl."
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 2028,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								904,
+								904
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/AngularJS-sublime-package-master/AngularJS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 72.0,
+						"translation.y": 60.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "css/buttons.css",
+					"settings":
+					{
+						"buffer_size": 444,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								28,
+								28
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/controllers/redshark.js",
+					"settings":
+					{
+						"buffer_size": 2745,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1485,
+								1485
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 915.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/services/servicios.js",
+					"settings":
+					{
+						"buffer_size": 1445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								44,
+								44
+							]
+						],
+						"settings":
+						{
+							"auto_name": "var _services=angular.module('redFactorys',['servi",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/directives/directivas.js",
+					"settings":
+					{
+						"buffer_size": 8361,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								125,
+								125
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1680.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "css/style.css",
+					"settings":
+					{
+						"buffer_size": 261,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								245,
+								245
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								98,
+								98
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 44.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.git":
+	{
+		"height": 142.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/xampp/htdocs/RedShark/redshark.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

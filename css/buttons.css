@@ -1,0 +1,28 @@
+.play,.pause,.next,.previous{
+	padding-left: 0px;
+	margin: auto;
+	background-image: url("../img/sprite.png");
+	background-repeat: no-repeat;
+	cursor: pointer;
+	background-color: transparent !important;
+	border: 0px !important;
+	width: 58px;
+	height: 60px;
+}
+
+.play{
+	background-position: -190px -64px;
+}
+
+.pause{
+	background-position: -65px -64px;
+}
+
+.next{
+	background-position: -0px -64px;
+}
+
+.previous{
+	background-position: -190px -0px;
+}
+
