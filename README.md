@@ -1,6 +1,6 @@
 RedShark AngularJS
 ========
-<center><img src="http://s28.postimg.org/i8q5o30q1/logo.png"></center>
+<center><img src="http://s28.postimg.org/i8q5o30q1/logo.png"></center><br>
 NOTA: no subir las canciones al repositorio, subir la carpeta media vacia
 
 Author: Rey David Dominguez
