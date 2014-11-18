@@ -5,6 +5,7 @@
 	<link rel="shortcut icon" href="img/red_shark_icon_64px.ico" />
 	<script type="text/javascript" src="js/angular.min.js"></script>
 	<script type="text/javascript" src="js/directives/directivas.js"></script>
+	<script type="text/javascript" src="js/directives/angular-file-upload.js"></script>
 	<script type="text/javascript" src="js/services/servicios.js"></script>
 	<script type="text/javascript" src="js/controllers/redshark.js"></script>
 	
@@ -29,7 +30,7 @@
 				</audio>
 			</div>
 			<div class="progress" style="width:400px;">
-			  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			  <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
 			  	{{shoCurrentTime}}
 			  </div>
 			</div>
@@ -37,14 +38,15 @@
 	</div>
 
 	<div class="listado">
-		<table class="table">
+		<table class="table noselect">
 			<tr>
 				<th>Titulo</th>
 				<th>Artista</th>
 				<th>Album</th>
 			</tr>
 			<tr ng-repeat="song in songs" 
-				ng-class="{'rowSong': ($index%2)!=0,'rowSongAlt': ($index%2)==0, 'playing': song.playClass}">
+				ng-class="{'rowSong': ($index%2)!=0,'rowSongAlt': ($index%2)==0, 'playing': song.playClass}"
+				ng-dblclick="playSong($index)">
 				<td>{{song.title}}</td>
 				<td>{{song.artist}}</td>
 				<td>{{song.album=='Default'?'':song.album}}</td>
@@ -52,7 +54,30 @@
 		</table>
 	</div>
 	<div class="fileLoader">
+		<input type="file" nv-file-select="" uploader="uploader" multiple  accept=".mp3"/>
+		<div class="well my-drop-zone" nv-file-over="" uploader="uploader">
+            
+        </div>
 
+        <table class="table"><!--  ng-show="uploader.queue.length>0" -->
+        	<tr>
+        		<th>Archivo</th>
+        		<th></th>
+        	</tr>
+        	<tr ng-repeat="item in uploader.queue" 
+				ng-class="{'rowSong': ($index%2)!=0,'rowSongAlt': ($index%2)==0}">
+				<td>
+					{{item.file.name}}
+				</td>
+				<td>
+					<img src="img/success.png" ng-show="item.isSuccess">
+					<img src="img/delete.png" ng-hide="item.isSuccess" class="delete" ng-click="deleteFile(item)">
+				</td>
+			</tr>
+        </table> 
+
+        <button class="btn btn-primary" ng-click="uploader.uploadAll()">Cargar</button>
 	</div>
 </body>
 </html>
+<red-alert></red-alert>

@@ -4,7 +4,7 @@
 }
 
 .fileLoader{
-	width: 50%;
+	width: 45%;
 	float: right;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .rowSong,.rowSongAlt{
-	cursor: default;
+	cursor: pointer;
 }
 
 .rowSong:hover,.rowSongAlt:hover{
@@ -22,4 +22,29 @@
 
 .playing{
 	color: #FF0000
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.my-drop-zone { 
+	border: dotted 3px lightgray; 
+}
+.nv-file-over { 
+	border: dotted 3px red; 
+} 
+.another-file-over-class { 
+	border: dotted 3px green; 
+}
+
+.delete{
+	width:24px;
+	height: 24px;
+	cursor: pointer;
 }

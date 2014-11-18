@@ -1,6 +1,23 @@
-var app=angular.module('redshark',['directivas',"redFactorys"]);
+var app=angular.module('redshark',['directivas',"redFactorys",'angularFileUpload']);
 
-app.controller('reproductor',["$scope","$interval",function($scope,$interval){
+app.controller('reproductor',["$scope","$interval", 'FileUploader',function($scope,$interval, FileUploader){
+	var uploader = $scope.uploader = new FileUploader({
+            url: 'componentes/funciones/upload.php'
+    });
+
+	uploader.filters.push({
+            name: 'customFilter',
+            fn: function(audio /*{File|FileLikeObject}*/, options) {
+            	console.log(options);
+                return this.queue.length < 10;
+            }
+    });
+
+	uploader.onCompleteAll = function() {
+        uploader.queue.splice(0);
+        fnc_showAlert("Archivos cargados correctamente",'success');
+    };
+
 	$('#tag_audio').bind('ended', function(){
 		$scope.next();
 	});
@@ -80,6 +97,12 @@ app.controller('reproductor',["$scope","$interval",function($scope,$interval){
 		$scope.play();
 	};
 
+	$scope.playSong=function(index){
+		$scope.songs[$scope.current_song].playClass=false;
+		$scope.current_song=index;
+		$scope.play();
+	};
+
 	$scope.setTime=function(){
 		$('.progress-bar').css('width','0%');
 		var duration=$scope.songs[$scope.current_song].duration;
@@ -92,11 +115,14 @@ app.controller('reproductor',["$scope","$interval",function($scope,$interval){
 		$interval(function(){
 			currentTime+=1000;
 			var percent=(currentTime/time)*100;
-			$('.progress-bar').css('width',percent+'%');			
-			$('.progress-bar').attr('aria-valuenow',percent);
+			$('.progress-bar').css('width',percent+'%');
 			millisToMinutes(currentTime);
 		},999,repeats);
 	};
+
+	$scope.deleteFile=function(item){
+		uploader.queue.splice(uploader.queue.indexOf(item),1);
+	};	
 
 	var millisToMinutes=function (millis) {
 	  var minutes = Math.floor(millis / 60000);
