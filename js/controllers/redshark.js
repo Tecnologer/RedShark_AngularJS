@@ -21,6 +21,8 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 		$scope.next();
 	});
 	$scope.current_song=0;
+	var timerSong;
+	var timerSongPause=false;
 	$scope.shoCurrentTime='0:00';
 	$scope.songs=[
 		{
@@ -36,7 +38,7 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 			artist: "Rammstein",
 			album: "Default",
 			file: "media/Rammstein/Default/Sehnsucht.mp3",
-			duration: "3:55",
+			duration: "4:04",
 			playClass: false
 		},
 		{
@@ -44,7 +46,7 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 			artist: "Rammstein",
 			album: "Default",
 			file: "media/Rammstein/Default/Engel.mp3",
-			duration: "3:55",
+			duration: "4:24",
 			playClass: false
 		},
 		{
@@ -52,28 +54,37 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 			artist: "Rammstein",
 			album: "Default",
 			file: "media/Rammstein/Default/Bestrafe Mich.mp3",
-			duration: "3:55",
+			duration: "3:38",
+			playClass: false
+		},
+		{
+			title: "Tier",
+			artist: "Rammstein",
+			album: "Default",
+			file: "media/Rammstein/Default/Tier.mp3",
+			duration: "3:47",
 			playClass: false
 		}
 	];
+	$scope.current_songFile=$scope.songs[$scope.current_song].file;
+	$('#audio_tag').load();
 
-	$scope.play=function(previous){
+	$scope.play=function(){
 		$scope.current_songFile=$scope.songs[$scope.current_song].file;
 		$('#audio_tag').load();
 		$interval(function(){
 			$('#audio_tag')[0].play();
 		},100,1);
-
-		// console.log(angular.element($("#songRow_"+$scope.current_song)));
-		// $("#songRow_"+$scope.current_song).attr('class','playing');
 		$scope.songs[$scope.current_song].playClass=true;
 		$scope.isPlaying=true;
-		$scope.setTime()
+		$scope.setTime(!timerSongPause);
 	};
 
 	$scope.pause=function(){
-		$('#audio_tag')[$scope.current_song].pause();
+		$('#audio_tag')[0].pause();
 		$scope.isPlaying=false;
+		$scope.pauseTimer();
+		timerSongPause=true;
 	};
 
 	$scope.next=function(){
@@ -82,6 +93,8 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 		if($scope.current_song>=$scope.songs.length)
 			$scope.current_song=0;
 
+		timerSongPause=false;
+		$interval.cancel(timerSong);
 		$scope.play();
 	};
 
@@ -92,31 +105,57 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 		if($scope.current_song<0)
 			$scope.current_song=$scope.songs.length;
 
-		// $('#audio_tag')[$scope.current_song].play();
+		timerSongPause=false;
+		$interval.cancel(timerSong);
 		$scope.play();
 	};
 
 	$scope.playSong=function(index){
 		$scope.songs[$scope.current_song].playClass=false;
 		$scope.current_song=index;
+		$interval.cancel(timerSong);
+		timerSongPause=false;
 		$scope.play();
 	};
 
-	$scope.setTime=function(){
+	$scope.setTime=function(reset){
 		$('.progress-bar').css('width','0%');
 		var duration=$scope.songs[$scope.current_song].duration;
 			duration=duration.split(":");
-		var minutes=angular.fromJson(duration[0])*60000;
-		var seconds=angular.fromJson(duration[1])*1000;
+		var minutes=Number(duration[0])*60000;
+		var seconds=Number(duration[1])*1000;
 		var time=minutes+seconds;
 		var repeats=time/1000;
-		var currentTime=0;
-		$interval(function(){
-			currentTime+=1000;
-			var percent=(currentTime/time)*100;
+		if(reset)
+			$scope.currentTime=0;
+
+		timerSong=$interval(function(){
+			$scope.currentTime+=1000;
+			var percent=($scope.currentTime/time)*100;
 			$('.progress-bar').css('width',percent+'%');
-			millisToMinutes(currentTime);
+			millisToMinutes($scope.currentTime);
 		},999,repeats);
+	};
+
+	$scope.pauseTimer=function(){
+		$interval.cancel(timerSong);
+	};
+
+	$scope.setCurrentTime=function(event){
+		$interval.cancel(timerSong);
+		var divLength=angular.element(event.target)[0].offsetWidth;
+		var click=event.offsetX;
+		var duration=$scope.songs[$scope.current_song].duration;
+			duration=duration.split(":");
+		var minutes=Number(duration[0])*60000;
+		var seconds=Number(duration[1])*1000;
+			duration=minutes+seconds;
+		var percent=click/divLength;
+		$('.progress-bar').css('width',(percent*100)+'%');
+		$scope.currentTime=duration*percent;
+		$scope.setTime();
+		$('#audio_tag')[0].currentTime = $scope.currentTime/1000;
+		$('#audio_tag')[0].play();
 	};
 
 	$scope.deleteFile=function(item){
