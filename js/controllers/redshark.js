@@ -1,9 +1,7 @@
 var app=angular.module('redshark',['directivas',"redFactorys",'angularFileUpload']);
 
-app.controller('reproductor',["$scope","$interval", 'FileUploader',function($scope,$interval, FileUploader){
-	var uploader = $scope.uploader = new FileUploader({
-            url: 'componentes/funciones/upload.php'
-    });
+app.controller('reproductor',["$scope","$interval", "$document",'FileUploader',function($scope,$interval,$document, FileUploader){
+	var uploader = $scope.uploader = new FileUploader({url: 'componentes/funciones/upload.php'});
 
 	uploader.filters.push({
             name: 'customFilter',
@@ -17,13 +15,71 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
         fnc_showAlert("Archivos cargados correctamente",'success');
     };
 
-	$('#tag_audio').bind('ended', function(){
+	$('#audio_tag').bind('ended', function(){
 		$scope.next();
 	});
+
+	$document.bind("keyup",function(event){
+		//accesos directos que solo se permiten cuando ningun elemento tiene el focus
+	   if (!$("input").is(":focus")) 
+	    {
+		  	//console.log(e.keyCode);
+		  	// console.log(e.which);
+
+		  	switch(event.which)
+		  	{
+		  		case 32: //tecla espacio 
+		  		case 179://tecla play (Teclado Vorago KB500)
+		  			//play-pausa
+		  			if($scope.isPlaying)
+						$scope.pause();
+					else
+						$scope.play();
+		  		break;
+		  		case 66://tecla B (back)
+		  			$scope.previous();
+		  		break;
+		  		case 78: //tecla N (next)
+		  			$scope.next();
+		  		break;
+		  		case 82://tecla R (repetir off-lista-cancion)
+		  			console.info("repeat");
+		  		break;
+		  		case 83://tecla S (encender-apagar shuffle)
+		  			console.info("shuffle");
+		  		break;
+		  		default:
+		  			console.log(event.keyCode);
+		  		break;
+		  	}
+		}
+
+		//accesos directos que pueden funcionar en cualquier parte de la pagina, tenga o no tenga algun elemento el focus
+		switch(event.keyCode)
+	  	{
+	  		case 113://tecla F2 (refrescar lista)
+	  			/*solo se refrescara la lista cuando el div reload tenga la clase "reload",
+	  			  esto para evitar demasiados llamados al server*/
+	  			/*if($('#div_reload').attr("class")=='reload')
+	  				getSongs();*/
+	  			console.info("getSong");
+	  		break;
+	  		default:
+	  			console.log(event.keyCode);
+	  		break;
+	  	}
+	});
+	
+	/*$document.bind('touchstart', function(e) {
+	    touch = e.touches[0];
+	    alert(touch);	   
+	});*/
+
 	$scope.current_song=0;
 	var timerSong;
 	var timerSongPause=false;
-	$scope.shoCurrentTime='0:00';
+	$scope.showCurrentTime='0:00';
+	$scope.duration="0:00";
 	$scope.songs=[
 		{
 			title: "Du Hast",
@@ -69,9 +125,12 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 	$scope.current_songFile=$scope.songs[$scope.current_song].file;
 	$('#audio_tag').load();
 
-	$scope.play=function(){
-		$scope.current_songFile=$scope.songs[$scope.current_song].file;
-		$('#audio_tag').load();
+	$scope.play=function(sn_load){
+		if($('#audio_tag').attr('src')=='' || sn_load)
+		{
+			$scope.current_songFile=$scope.songs[$scope.current_song].file;
+			$('#audio_tag').load();
+		}
 		$interval(function(){
 			$('#audio_tag')[0].play();
 		},100,1);
@@ -95,7 +154,7 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 
 		timerSongPause=false;
 		$interval.cancel(timerSong);
-		$scope.play();
+		$scope.play(true);
 	};
 
 	$scope.previous=function(){
@@ -107,7 +166,7 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 
 		timerSongPause=false;
 		$interval.cancel(timerSong);
-		$scope.play();
+		$scope.play(true);
 	};
 
 	$scope.playSong=function(index){
@@ -115,7 +174,7 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 		$scope.current_song=index;
 		$interval.cancel(timerSong);
 		timerSongPause=false;
-		$scope.play();
+		$scope.play(true);
 	};
 
 	$scope.setTime=function(reset){
@@ -125,6 +184,7 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 		var minutes=Number(duration[0])*60000;
 		var seconds=Number(duration[1])*1000;
 		var time=minutes+seconds;
+		$scope.duration=millisToMinutes(time);
 		var repeats=time/1000;
 		if(reset)
 			$scope.currentTime=0;
@@ -133,7 +193,7 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 			$scope.currentTime+=1000;
 			var percent=($scope.currentTime/time)*100;
 			$('.progress-bar').css('width',percent+'%');
-			millisToMinutes($scope.currentTime);
+			$scope.showCurrentTime=millisToMinutes($scope.currentTime);
 		},999,repeats);
 	};
 
@@ -165,6 +225,6 @@ app.controller('reproductor',["$scope","$interval", 'FileUploader',function($sco
 	var millisToMinutes=function (millis) {
 	  var minutes = Math.floor(millis / 60000);
 	  var seconds = ((millis % 60000) / 1000).toFixed(0);
-	  $scope.shoCurrentTime=minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+	  return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 	}
 }]);
